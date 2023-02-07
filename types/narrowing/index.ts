@@ -7,7 +7,7 @@ function printId(id: string | number) {
 }
 
 
-function findType<T extends string | boolean>(a: T, b: string | number | boolean): T | void {
+function findType(a: string | boolean, b: string | number | boolean): true | void {
   if (a === b) {
     console.log(a) // type string | boolean
   }
@@ -19,8 +19,10 @@ function findType<T extends string | boolean>(a: T, b: string | number | boolean
   }
 }
 
-function handler(a: MouseEvent | HTMLInputElement) {
-  if ("value" in a) {
-    console.log(a) // type HTMLInputElement
+function handler(evt: MouseEvent | HTMLInputElement) {
+  if ("value" in evt) {
+    console.log(evt) // type HTMLInputElement
+  } else {
+    console.log(evt) // type MouseEvent
   }
 }

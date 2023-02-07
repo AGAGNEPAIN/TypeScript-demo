@@ -12,11 +12,14 @@ function intrus<Type>(arg: Array<Type>): Type {
   return arg[0];
 }
 
-const test4 = intrus(['broccoli', 1, 3, 'frites', 'gratins',])
+const test4 = intrus(['broccoli', 1, 3, 'frites', 'gratins']) //return type (string | number)[]
 
 //------------- Generic in Alias -------------------------
 
-type Identity<ArgType> = { type: 'human' | 'android', data: ArgType }
+interface Identity<DataType> {
+  type: 'human' | 'android',
+  data: DataType
+}
 
 const terminator: Identity<{ weight: number }> = {
   type: "android",
