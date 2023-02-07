@@ -10,10 +10,7 @@ const displayPersonInfo = (person: Person): string | void => {
 displayPersonInfo({firstname: 'John', lastname: 'Doe', age: 40, situation: 'single'})
 
 
-
-// -----------------------------------------------------
-
-
+// ------------ With Library ----------------------
 type ApiResponse = {
   "icon_url": string,
   "id": string,
